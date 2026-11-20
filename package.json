@@ -1,0 +1,29 @@
+{
+  "name": "cermati-wdio-bdd",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "wdio run ./wdio.conf.ts",
+    "test:headless": "HEADLESS=true wdio run ./wdio.conf.ts",
+    "test:e2e": "wdio run ./wdio.conf.ts --cucumberOpts.tags=@e2e",
+    "test:comparison": "wdio run ./wdio.conf.ts --cucumberOpts.tags=@comparison",
+    "test:search": "wdio run ./wdio.conf.ts --cucumberOpts.tags=@search",
+    "test:smoke": "HEADLESS=true wdio run ./wdio.conf.ts --cucumberOpts.tags=@smoke",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf reports",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@wdio/cli": "^10.2.0",
+    "@wdio/cucumber-framework": "^10.2.0",
+    "@wdio/globals": "^10.2.0",
+    "@wdio/local-runner": "^10.2.0",
+    "@wdio/spec-reporter": "^9.0.0",
+    "prettier": "^3.10.1",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "description": "End-to-end BDD tests for Cermati Reksa Dana using WebdriverIO + Cucumber"
+}
